@@ -1,1 +1,189 @@
+// Responsive UI solution
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title>Responsive web page</title>
+  </head>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .container-2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .header {
+      border: 1px solid #c890e4;
+      order: 0;
+      background: #9933cc;
+      height: 14vh;
+    }
+
+    .leftsidebars > div {
+      border: 1px solid #7bcfee;
+      background: #33b5e5;
+    }
+
+    .rightsidemenu {
+      background: #33b5e5;
+      border: 1px solid #d5f0fa;
+    }
+
+    .footer {
+      order: 3;
+      border: 1px solid #ceebf6;
+      background: #0099cc;
+    }
+
+    /* Media Query for Mobile Devices */
+    @media (max-width: 480px) {
+      .header {
+        height: 10vh;
+      }
+      .container-2 {
+        flex-direction: column;
+      }
+      .leftsidebars {
+        height: 66vh;
+        margin-left: 1vw;
+      }
+      .leftsidebars > div {
+        height: 3vh;
+        width: 90vw;
+        margin: 1vh;
+      }
+      .rightsidemenu {
+        margin: 1vh auto;
+        height: 6vh;
+        width: 94vw;
+      }
+      .footer {
+        height: 8vh;
+      }
+    }
+
+    /* Media Query for low resolution  Tablets, Ipads */
+    @media (min-width: 481px) and (max-width: 767px) {
+      .container-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .header {
+        height: 8vh;
+      }
+
+      .leftsidebars {
+        width: 90vw;
+        height: 75vh;
+        justify-self: flex-start;
+      }
+      .leftsidebars > div {
+        height: 4vh;
+        margin: 1vh;
+        max-width: 30vw;
+      }
+
+      .rightsidemenu {
+        height: 10vh;
+        margin-bottom: 1vh;
+        width: 95vw;
+      }
+      .container > .footer {
+        height: 6vh;
+        align-items: flex-end;
+      }
+    }
+
+    /* Media Query for Tablets Ipads portrait mode */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .container-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .header {
+        height: 5vh;
+      }
+
+      .leftsidebars {
+        width: 90vw;
+        height: 75vh;
+        justify-self: flex-start;
+      }
+
+      .leftsidebars > div {
+        height: 4vh;
+        margin: 1vh;
+        max-width: 30vw;
+      }
+
+      .rightsidemenu {
+        height: 10vh;
+        margin-bottom: 1vh;
+        width: 95vw;
+      }
+
+      .footer {
+        height: 6vh;
+      }
+    }
+
+    /* Media Query for Laptops and Desktops */
+    @media (min-width: 1025px) {
+      .leftsidebars {
+        height: 65vh;
+        margin-left: 1vw;
+      }
+
+      .header {
+        height: 13vh;
+      }
+
+      .leftsidebars > div {
+        width: 15vw;
+        margin: 0.6vmax;
+        height: 6vh;
+      }
+
+      .rightsidemenu {
+        width: 15vw;
+        order: 2;
+        margin: 2vh 1vw;
+        height: 70vh;
+      }
+
+
+      .footer {
+        height: 10vh;
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="header"></div>
+      <div class="container-2">
+        <div class="leftsidebars">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="rightsidemenu"></div>
+      </div>
+      <div class="footer"></div>
+    </div>
+  </body>
+</html>
